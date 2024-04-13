@@ -1,7 +1,7 @@
 project: default
 source:
   repoURL: 'https://github.com/iliusa77/k8s-argocd.git'
-  path: application/guestbook
+  path: application/guestbook/manifests
   targetRevision: HEAD
 destination:
   server: 'https://kubernetes.default.svc'

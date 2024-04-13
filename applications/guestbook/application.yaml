@@ -1,7 +1,7 @@
 project: default
 source:
   repoURL: 'https://github.com/iliusa77/k8s-argocd.git'
-  path: application/guestbook/manifests
+  path: applications/guestbook/manifests
   targetRevision: HEAD
 destination:
   server: 'https://kubernetes.default.svc'
@@ -9,5 +9,4 @@ destination:
 syncPolicy:
   automated:
     prune: true
-  syncOptions:
-    - CreateNamespace=true
+    selfHeal: true

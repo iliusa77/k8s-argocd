@@ -21,7 +21,7 @@ argocd admin initial-password -n argocd
 kubectl port-forward svc/argocd-server 8080:443 -n argocd
 ```
 
-### Install application (guestbook) via ArgoCD cli
+### Deploy application (guestbook) via ArgoCD cli
 #### login
 ```
 argocd login 127.0.0.1:8080
@@ -57,3 +57,17 @@ argocd/guestbook  https://kubernetes.default.svc  default    default  Synced  He
 ### Open in browser https://127.0.0.1:8080
 - Username: admin
 - Password: 633ZW09owd948xE7
+
+### Create application (guestbook) in ArgoCD UI
+- New app -> Create
+- Application Name: guestbook
+- Project Name: default
+- SYNC POLICY: Automatic
+  PRUNE RESOURCES +
+  SELF HEAL +
+  AUTO-CREATE NAMESPACE +
+- Repository URL: https://github.com/iliusa77/k8s-argocd.git
+- Path: applications/guestbook/manifests
+- Cluster URL: https://kubernetes.default.svc
+- Namespace: default
+

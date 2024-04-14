@@ -58,7 +58,7 @@ argocd/guestbook  https://kubernetes.default.svc  default    default  Synced  He
 - Username: admin
 - Password: 633ZW09owd948xE7
 
-### Create application (guestbook) in ArgoCD UI
+### Create 'guestbook' application (from k8s manifests) in ArgoCD UI
 - New app -> Create
 - Application Name: guestbook
 - Project Name: default
@@ -71,3 +71,15 @@ argocd/guestbook  https://kubernetes.default.svc  default    default  Synced  He
 - Cluster URL: https://kubernetes.default.svc
 - Namespace: default
 
+### Create 'my-app-dev' application (from Kustomize) in ArgoCD UI
+- New app -> Create
+- Application Name: my-app-dev
+- Project Name: default
+- SYNC POLICY: Automatic
+  PRUNE RESOURCES +
+  SELF HEAL +
+  AUTO-CREATE NAMESPACE +
+- Repository URL: https://github.com/iliusa77/k8s-argocd.git
+- Path: applications/demo-application-kustomize/overlays/dev
+- Cluster URL: https://kubernetes.default.svc
+- Namespace: my-app-dev

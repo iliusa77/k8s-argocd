@@ -1,3 +1,13 @@
+This repository contains ArgoCD quick start guide from scratch for beginners.
+
+There are three types of ArgoCD applications deployments:
+- from native k8s manifests
+- from Kustomize
+- from Helm chart
+
+### Requirements
+- installed k8s cluster (minikube,EKS)
+
 ### Install ArgoCD from manifest
 
 ```
@@ -63,9 +73,13 @@ argocd/guestbook  https://kubernetes.default.svc  default    default  Synced  He
 - Application Name: guestbook
 - Project Name: default
 - SYNC POLICY: Automatic
+
   PRUNE RESOURCES +
+
   SELF HEAL +
+
   AUTO-CREATE NAMESPACE +
+
 - Repository URL: https://github.com/iliusa77/k8s-argocd.git
 - Path: applications/guestbook/manifests
 - Cluster URL: https://kubernetes.default.svc
@@ -76,9 +90,13 @@ argocd/guestbook  https://kubernetes.default.svc  default    default  Synced  He
 - Application Name: my-app-dev
 - Project Name: default
 - SYNC POLICY: Automatic
+
   PRUNE RESOURCES +
+
   SELF HEAL +
+
   AUTO-CREATE NAMESPACE +
+
 - Repository URL: https://github.com/iliusa77/k8s-argocd.git
 - Path: applications/demo-application-kustomize/overlays/dev
 - Cluster URL: https://kubernetes.default.svc

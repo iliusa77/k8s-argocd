@@ -81,7 +81,7 @@ argocd/guestbook  https://kubernetes.default.svc  default    default  Synced  He
   AUTO-CREATE NAMESPACE +
 
 - Repository URL: https://github.com/iliusa77/k8s-argocd.git
-- Path: applications/guestbook/manifests
+- Path: applications/demo-application-k8s-manifests/manifests
 - Cluster URL: https://kubernetes.default.svc
 - Namespace: default
 
@@ -101,3 +101,20 @@ argocd/guestbook  https://kubernetes.default.svc  default    default  Synced  He
 - Path: applications/demo-application-kustomize/overlays/dev
 - Cluster URL: https://kubernetes.default.svc
 - Namespace: my-app-dev
+
+### Create 'jaeger' application (from Helm) in ArgoCD UI
+- New app -> Create
+- Application Name: jaeger
+- Project Name: default
+- SYNC POLICY: Automatic
+
+  PRUNE RESOURCES +
+
+  SELF HEAL +
+
+  AUTO-CREATE NAMESPACE +
+
+- Repository URL: https://github.com/iliusa77/k8s-argocd.git
+- Path: applications/demo-application-helm/jaeger
+- Cluster URL: https://kubernetes.default.svc
+- Namespace: default

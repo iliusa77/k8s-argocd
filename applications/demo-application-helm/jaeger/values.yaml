@@ -6,7 +6,7 @@ global:
   imageRegistry:
 
 provisionDataStore:
-  cassandra: true
+  cassandra: false
   elasticsearch: false
   kafka: false
 
@@ -20,7 +20,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 allInOne:
-  enabled: false
+  enabled: true
   replicas: 1
   image:
     registry: ""
